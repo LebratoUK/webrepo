@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lebrato: Co-Founder Opportunity</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream:#FAF7F2; --slate:#1C1917; --gold:#C8956C; --gold-lt:#E8B894;
+  --sage:#4A5E52; --muted:#7A6E65; --border:rgba(28,25,23,0.1);
+  --cream-deep:#F0EBE1; --white:#FFFFFF;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--cream);color:var(--slate);font-family:'DM Sans',sans-serif;font-size:15px;line-height:1.7;}
+
+/* PAGE BREAKS FOR PRINTING */
+@media print{
+  .page{page-break-after:always;}
+  .no-break{page-break-inside:avoid;}
+}
+
+/* COVER */
+.cover{
+  background:var(--slate);color:var(--cream);
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  text-align:center;padding:4rem 3rem;position:relative;overflow:hidden;
+}
+.cover-bg{
+  position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(200,149,108,0.25) 0%,transparent 65%),
+             radial-gradient(ellipse 50% 40% at 80% 80%,rgba(74,94,82,0.15) 0%,transparent 60%);
+}
+.cover-logo{font-family:'Playfair Display',serif;font-size:2.2rem;letter-spacing:-0.02em;margin-bottom:3rem;position:relative;}
+.cover-logo span{color:var(--gold);}
+.cover-eyebrow{font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1.25rem;position:relative;}
+.cover h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:400;line-height:1.15;letter-spacing:-0.03em;max-width:640px;position:relative;}
+.cover h1 em{font-style:italic;color:var(--gold);}
+.cover-sub{font-size:1rem;color:rgba(250,247,242,0.6);max-width:440px;margin:1.5rem auto 0;position:relative;font-weight:300;}
+.cover-divider{width:60px;height:2px;background:var(--gold);margin:2.5rem auto;position:relative;}
+.cover-meta{display:flex;gap:2.5rem;flex-wrap:wrap;justify-content:center;position:relative;width:100%;}
+.cover-meta-item{text-align:center;min-width:80px;}
+.cover-meta-item .val{font-family:'Playfair Display',serif;font-size:1.8rem;color:var(--gold);}
+.cover-meta-item .lbl{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(250,247,242,0.45);margin-top:0.2rem;}
+.cover-footer{position:absolute;bottom:2rem;left:0;right:0;text-align:center;font-size:0.7rem;color:rgba(250,247,242,0.3);letter-spacing:0.05em;}
+
+/* SECTION */
+.section{padding:5rem 0;border-bottom:1px solid var(--border);}
+.container{max-width:800px;margin:0 auto;padding:0 3rem;}
+.section-label{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:1rem;}
+.section h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;letter-spacing:-0.02em;line-height:1.2;margin-bottom:1.5rem;}
+.section h2 em{font-style:italic;}
+p{color:#555;line-height:1.75;margin-bottom:1.1rem;}
+p strong{color:var(--slate);font-weight:500;}
+
+/* CARDS */
+.card-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2.5rem;}
+.card{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:1.5rem;}
+.card-icon{font-size:1.5rem;margin-bottom:0.75rem; text-align: center;}
+.card h3{font-size:0.9rem;font-weight:500;color:var(--slate);margin-bottom:0.4rem; text-align: center;}
+.card p{font-size:0.875rem;color:var(--muted);margin:0;line-height:1.6; text-align: center;}
+
+/* ROLE TABLE */
+.role-table{border:1px solid var(--border);border-radius:16px;overflow:hidden;margin-top:2rem;}
+.role-row{display:grid;grid-template-columns:1fr 2fr;border-bottom:1px solid var(--border);}
+.role-row:last-child{border-bottom:none;}
+.role-label{padding:1rem 1.25rem;background:var(--cream-deep);font-size:0.825rem;font-weight:500;color:var(--slate);}
+.role-value{padding:1rem 1.5rem;font-size:0.875rem;color:#555;}
+
+/* EQUITY VISUAL */
+.equity-bar-wrap{margin:2rem 0;}
+.equity-bar{height:44px;border-radius:10px;overflow:hidden;display:flex;}
+.equity-seg-you{background:var(--gold);flex:15;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;color:#fff;white-space:nowrap;overflow:hidden;}
+.equity-seg-them{background:var(--slate);flex:85;display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:500;color:#fff;white-space:nowrap;overflow:hidden;}
+.equity-labels{display:flex;justify-content:space-between;margin-top:0.5rem;}
+.equity-label{font-size:0.8rem;color:var(--muted);}
+
+.vesting-timeline{margin:2rem 0;}
+.vesting-row{display:flex;gap:1.5rem;align-items:flex-start;padding:1.25rem 0;border-bottom:1px solid var(--border);}
+.vesting-row:last-child{border-bottom:none;}
+.vesting-dot{width:36px;height:36px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-size:0.7rem;font-weight:500;color:var(--white);flex-shrink:0;}
+.vesting-dot.grey{background:var(--cream-deep);color:var(--muted);}
+.vesting-body h4{font-size:0.875rem;font-weight:500;color:var(--slate);}
+.vesting-body p{font-size:0.825rem;color:var(--muted);margin:0.2rem 0 0;}
+
+/* HONEST BOX */
+.honest-box{background:var(--cream-deep);border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:1.25rem 1.5rem;margin:2rem 0;}
+.honest-box h4{font-size:0.875rem;font-weight:500;color:var(--slate);margin-bottom:0.5rem;}
+.honest-box p{font-size:0.875rem;color:var(--muted);margin:0;line-height:1.65;}
+
+/* COMMITMENT LIST */
+ul.commit{padding-left:0;list-style:none;margin-top:1.25rem;}
+ul.commit li{padding:0.6rem 0;border-bottom:1px solid var(--border);font-size:0.875rem;color:#555;display:flex;gap:0.6rem;align-items:flex-start;}
+ul.commit li:last-child{border-bottom:none;}
+ul.commit li::before{content:"→";color:var(--gold);flex-shrink:0;margin-top:0.05rem;}
+
+/* CTA SECTION */
+.cta-section{background:var(--slate);color:var(--cream);padding:5rem 3rem;text-align:center;}
+.cta-section h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:400;letter-spacing:-0.02em;margin-bottom:1rem;}
+.cta-section p{color:rgba(250,247,242,0.55);max-width:460px;margin:0 auto 2.5rem;}
+.cta-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:680px;margin:0 auto 2.5rem;}
+.cta-step{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:1.25rem 1rem;text-align:center;}
+.cta-step-num{font-family:'Playfair Display',serif;font-size:2rem;color:var(--gold);font-weight:400;}
+.cta-step h4{font-size:0.825rem;font-weight:500;margin-top:0.3rem;}
+.cta-step p{font-size:0.75rem;color:rgba(250,247,242,0.45);margin-top:0.3rem;}
+.cta-contact{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:1.5rem 2rem;max-width:400px;margin:0 auto;}
+.cta-contact p{color:rgba(250,247,242,0.6);font-size:0.8rem;margin-bottom:0.5rem;}
+.cta-contact strong{color:var(--gold);font-size:0.95rem;}
+
+.whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      padding: 6px 12px;
+
+      background: rgba(37, 211, 102, 0.1);
+      border: 1px solid rgba(37, 211, 102, 0.3);
+      border-radius: 999px;
+
+      color: #25D366;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+.whatsapp-btn img {
+      width: 16px;
+    }
+    
+.linkedin-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      padding: 6px 12px;
+
+      background: rgba(32, 90, 247, 0.1);
+      border: 1px solid rgba(31, 85, 235, 0.25);
+      border-radius: 999px;
+
+      color: #0072B1;
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+.linkedin-btn img {
+      width: 16px;
+    }
+
+
+@media(max-width:600px){
+  /* Layout resets */
+  .container{padding:0 1.25rem;}
+  .card-grid{grid-template-columns:1fr;}
+  .role-row{grid-template-columns:1fr;}
+  .equity-labels{font-size:0.7rem;align-items:flex-start;}
+  .cta-steps{grid-template-columns:1fr;}
+
+  /* Cover section */
+  .cover{padding:3rem 1.5rem 4rem;}
+  .cover h1{font-size:clamp(1.9rem,8vw,2.6rem);}
+  .cover-logo{font-size:1.8rem;margin-bottom:2rem;}
+  .cover-meta{gap:1.25rem;}
+  .cover-meta-item .val{font-size:1.4rem;}
+  .cover-footer{font-size:0.6rem;letter-spacing:0.02em;padding:0 0.75rem;}
+
+  /* Section spacing */
+  .section{padding:3rem 0;}
+  .section h2{font-size:clamp(1.5rem,5.5vw,2rem);}
+
+  /* CTA section */
+  .cta-section{padding:3rem 1.25rem;}
+  .cta-contact{padding:1.25rem;}
+
+  /* Role table: stack label above value */
+  .role-label{border-bottom:1px solid var(--border);border-radius:0;}
+  .role-value{padding-top:0.75rem;}
+
+  /* Equity bar: shrink text so "You — 15%" fits inside the narrow 15% gold segment */
+  .equity-seg-you{font-size:0.6rem;padding:0 4px;}
+  .equity-seg-them{font-size:0.7rem;}
+
+  /* Vesting dot text size */
+  .vesting-dot{font-size:0.6rem;width:34px;height:34px;}
+
+  /* Honest box */
+  .honest-box{padding:1rem 1.1rem;}
+
+  /* Commit list */
+  ul.commit li{font-size:0.825rem;}
+
+  /* WhatsApp / LinkedIn button wrap on very small screens */
+  .whatsapp-btn, .linkedin-btn{font-size:12px;padding:5px 10px;}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover page">
+  <div class="cover-bg"></div>
+  <div class="cover-logo">Lebra<span>to</span></div>
+  <p class="cover-eyebrow">Co-Founder Opportunity<br>Private & Confidential</p>
+  <h1>An invitation to build <em>something</em> that changes how the UK celebrates</h1>
+  <p class="cover-sub">This document is for you. <br>An honest, clear look at what Lebrato is, what we're building, and why we think you could be exactly who we need.</p>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><div class="val">15%</div><div class="lbl">Minimum equity</div></div>
+    <div class="cover-meta-item"><div class="val">£132bn</div><div class="lbl">UK market</div></div>
+    <div class="cover-meta-item"><div class="val">Now</div><div class="lbl">Start date</div></div>
+  </div>
+  <div class="cover-footer">LEBRATO LIMITED · CO. NO. 15919460 · REGISTERED IN ENGLAND AND WALES · STRICTLY CONFIDENTIAL</div>
+</div>
+
+<!-- SECTION 1: WHAT IS LEBRATO -->
+<div class="section page">
+<div class="container">
+  <p class="section-label">The business</p>
+  <h2>The problem with celebrating in the UK is that finding the right place is <em>way too hard</em></h2>
+  <p>You work in hospitality. You already know this. How often do you see groups of people come in, hen parties, birthday dinners, leaving dos, who clearly booked the wrong kind of place? They wanted private dining and got a table in the corner. They wanted a vibe and got a chain restaurant. They wanted something memorable and got something mediocre.</p>
+  <p>The reason this happens is that finding the right venue for a group takes an enormous amount of effort. You're Googling, switching tabs between OpenTable, Yelp, and a dozen restaurant websites, reading 40 reviews for places that turn out to be fully booked anyway. The whole process is broken.</p>
+  <p><strong>Lebrato fixes this.</strong> You tell it what you're celebrating, "birthday dinner for 14, around £60 a head, East London, Saturday evening", and it gives you three perfect answers in seconds. Not a list of hundreds. Three. With an explanation of exactly why each one fits your occasion. Then you book straight through the app.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🤖</div>
+      <h3>AI That Understands Occasions</h3>
+      <p>Our technology reads what you're actually asking for, not just keywords, but the vibe, the occasion, the budget, and matches it to the right venue.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📍</div>
+      <h3>50,000+ London Venues, Instantly</h3>
+      <p>We don't need to sign up every venue individually. We pull data from Google, Yelp, and OpenTable to have the whole city covered from day one.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💷</div>
+      <h3>We Earn a Referral Commission</h3>
+      <p>Every booking made through Lebrato earns us commission, typically £15 - 25 per booking. No ads, no spam, no subscriptions for users.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📈</div>
+      <h3>A Massive, Growing Market</h3>
+      <p>72% of UK diners eat out specifically to celebrate. Group dining is growing 13% year on year. This isn't a niche, it's how people actually behave.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- SECTION 2: WHY YOU -->
+<div class="section page">
+<div class="container">
+  <p class="section-label">Why you specifically</p>
+  <h2>We don't need a tech person. We need someone who <em>understands hospitality</em> from the inside.</h2>
+  <p>The founder, Naadhish is based in South Asia, and handles all the technology. He built the business plan, the architecture, the frameworks, the SOPs, the financial model, and the legal foundation. What he cannot do is walk into a Southampton restaurant and convince a manager to partner with Lebrato. He can't attend a wedding fair in London or shake hands with a venue owner in Manchester. He needs someone in the UK who gets the hospitality world and can be the face of the business on the ground.</p>
+  <p>That's where you come in. You've worked inside fast-food hospitality. You understand how venues think, what their priorities are, how booking platforms are used, and what operators care about when choosing a partner. That's genuinely valuable expertise that most tech founders don't have access to.</p>
+  <p>You're also young, same as us. We're building something from scratch, and the people who tend to do that best are the ones who don't have much to lose and a lot to gain.</p>
+
+  <div class="honest-box">
+    <h4>Let's be honest about what you are and aren't</h4>
+    <p>You're not being hired as an employee. You're being asked to co-found a company. That means no guaranteed salary to start with, a lot of learning as you go, and a future that's only as good as the work we put in. In exchange, you own a real stake in something that could be worth a lot. We're not promising anything, we're offering a genuine shot.</p>
+  </div>
+</div>
+</div>
+
+<!-- SECTION 3: YOUR ROLE -->
+<div class="section page">
+<div class="container">
+  <p class="section-label">Your role</p>
+  <h2>Co-Founder &amp; <em>Commercial Director (UK)</em></h2>
+  <p>Your title is Co-Founder and Commercial Director for the UK. That means you take ownership in everything to do with UK relationships, partnerships, and commercial development. Here's what that actually looks like:</p>
+
+  <div class="role-table">
+    <div class="role-row"><div class="role-label">Venue Partnerships</div><div class="role-value">Contacting and meeting London restaurants, bars, and event spaces to build the Lebrato Select programme: our paid venue partnership tier launching in Year 2.</div></div>
+    <div class="role-row"><div class="role-label">Corporate Sales</div><div class="role-value">Reaching out to HR managers and executive assistants at London companies who book team events: a high-value customer segment we'll target from Year 2.</div></div>
+    <div class="role-row"><div class="role-label">User Community</div><div class="role-value">Building presence in the communities where our users hang out: London Facebook groups, Reddit communities, Instagram, before and after launch.</div></div>
+    <div class="role-row"><div class="role-label">Market Intelligence</div><div class="role-value">Your hospitality knowledge helps us understand what venues actually want, what occasion trends are emerging, and how to position Lebrato to both sides of the market.</div></div>
+    <div class="role-row"><div class="role-label">UK Operations</div><div class="role-value">Representing Lebrato as a UK-resident director: signing UK contracts, attending key meetings, being the operational contact for our bank, legal advisors, and partners.</div></div>
+    <div class="role-row"><div class="role-label">Events &amp; Networking</div><div class="role-value">Attending industry events like the Restaurant Show and Timeout Eat and Drink to build Lebrato's presence and your own professional network within hospitality tech.</div></div>
+    <div class="role-row"><div class="role-label">Not Your Job</div><div class="role-value">Writing code, managing APIs, or anything technical. Naadhish takes ownership in all of that. Your lane is commercial, relational, and UK-facing. Focus there.</div></div>
+  </div>
+
+  <p style="margin-top:2rem;font-size:0.9rem;color:var(--muted);">The time commitment starts at around 8 - 10 hours a week alongside your current job. When Lebrato raises its pre-seed funding (target: £75,000 - £100,000), the expectation is that you transition to full-time, and a salary begins from that point.</p>
+</div>
+</div>
+
+<!-- SECTION 4: THE EQUITY DEAL -->
+<div class="section page">
+<div class="container">
+  <p class="section-label">The equity deal</p>
+  <h2>You own <em>15%</em> of Lebrato. Here's exactly what that means.</h2>
+  <p>Equity is an ownership stake in the company. You're not being given shares for free unconditionally. They vest over time, which means you earn them as you contribute. This is standard for co-founders everywhere. It protects both of us.</p>
+
+  <div class="equity-bar-wrap">
+    <div class="equity-bar">
+      <div class="equity-seg-you">You: 15%</div>
+      <div class="equity-seg-them">Naadhish: 85%</div>
+    </div>
+    <div class="equity-labels">
+      <span class="equity-label">150,000 shares of</br>1,000,000 total</span>
+      <span class="equity-label">850,000 shares of</br>1,000,000 total</span>
+    </div>
+  </div>
+
+  <p>The vesting schedule works like this. Think of it as your shares being "unlocked" over time, month by month, as long as you're actively contributing to the business.</p>
+
+  <div class="vesting-timeline">
+    <div class="vesting-row">
+      <div class="vesting-dot">0</div>
+      <div class="vesting-body">
+        <h4>Day 1: Agreement Signed</h4>
+        <p>150,000 shares are formally allocated in your name. You are a co-founder of Lebrato Limited. However, if you leave before Month 12, the company has the right to buy them back at nominal value (essentially nothing). This is the cliff.</p>
+      </div>
+    </div>
+    <div class="vesting-row">
+      <div class="vesting-dot">12</div>
+      <div class="vesting-body">
+        <h4>Month 12: The Cliff (25% Vests Immediately)</h4>
+        <p>At the 12-month anniversary of the agreement, 37,500 shares (25% of your total) fully vest and are yours unconditionally. If you leave after this point, you keep these shares permanently.</p>
+      </div>
+    </div>
+    <div class="vesting-row">
+      <div class="vesting-dot">13-48</div>
+      <div class="vesting-body">
+        <h4>Months 13 - 48: Monthly Vesting</h4>
+        <p>The remaining 112,500 shares vest gradually at approximately 3,100 shares per month over the next 36 months. By month 48 (4 years total), all 150,000 shares are fully and unconditionally yours.</p>
+      </div>
+    </div>
+    <div class="vesting-row">
+      <div class="vesting-dot">✓</div>
+      <div class="vesting-body">
+        <h4>Why Does It Work This Way?</h4>
+        <p>Vesting is industry standard everywhere from Silicon Valley to Shoreditch. It ensures both co-founders stay committed for the long term. Naadhish's shares are subject to the same principle. It's not a penalty, it's a structure that makes the company investable and both of us accountable.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-grid" style="margin-top:2rem;">
+    <div class="card">
+      <div class="card-icon">💰</div>
+      <h3>What Your 15%<br>Could Be Worth</h3>
+      <p>When Lebrato raises a Seed round valuing the company at £4M, your 15% is worth £600,000 on paper.<br>At a £10M exit (acqui-hire or acquisition), that's £1.5M. These are scenarios, not promises. But they're realistic for a functioning UK hospitality tech company.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏢</div>
+      <h3>Director<br>From Day One</h3>
+      <p>You'll be appointed as a director of Lebrato Limited alongside signing this agreement. That's a formal legal role with real responsibilities and it means you can act on behalf of the company in the UK immediately.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- SECTION 5: WHAT WE NEED FROM YOU -->
+<div class="section page">
+<div class="container">
+  <p class="section-label">What we need from you</p>
+  <h2>This only works if we're both <em>genuinely committed</em></h2>
+  <p>Being a co-founder isn't a side project. It's a commitment to building something real, even when it's slow, frustrating, and uncertain. Here's what we're asking for:</p>
+  <ul class="commit">
+    <li>A minimum of 10 hours per week on Lebrato activity alongside your current job, from the day the agreement is signed.</li>
+    <li>Full-time dedication when the pre-seed raise is complete (expected within 6 - 8 months of signing)</li>
+    <li>Active and responsive communication: Naadhish operates across different time zones; you're the UK-side of the business and need to be reachable during UK business hours.</li>
+    <li>Honesty about what you can and can't do: There will be things you've never done before (B2B sales, partnership negotiations). That's fine. What matters is that you learn and that you tell us when you're stuck.</li>
+    <li>Representing Lebrato professionally at all times: You'll be the public face of the company in the UK, and how you come across to venue owners, investors, and users matters.</li>
+    <li>A willingness to sign a proper co-founder agreement, including confidentiality, IP assignment, and non-compete provisions (standard; we'll walk you through everything)</li>
+  </ul>
+
+  <div class="honest-box">
+    <h4>What You Don't Need</h4>
+    <p>You don't need a business degree, prior startup experience, technical skills, a large personal network, or a lot of money. What you need is genuine enthusiasm for the idea, a strong work ethic, and the willingness to learn fast. Plenty of the most successful UK startup founders had none of the conventional credentials when they started.</p>
+  </div>
+</div>
+</div>
+
+<!-- SECTION 6: WHAT'S IN IT FOR YOU -->
+<div class="section page">
+<div class="container">
+  <p class="section-label">What you get</p>
+  <h2>Beyond the equity: Why this could be <em>career-defining</em></h2>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-icon">🎓</div>
+      <h3>Real Startup Experience</h3>
+      <p>At 20, most people have never built anything. Co-founding a UK tech company, even if it's early, gives you credentials that money can't buy and that employers and investors will always respect.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🤝</div>
+      <h3>A Network You Can't Buy</h3>
+      <p>Venue owners, investors, industry events, and the London startup ecosystem. Within 12 months of being active in this role, you'll know more people in the right rooms than most people do in a decade.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📊</div>
+      <h3>B2B & Commercial Skills</h3>
+      <p>Partnership negotiation, account management, sales, and business development. These skills pay well in any career path, and you'll learn them on the job with real stakes attached.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💼</div>
+      <h3>Director Title From Day One</h3>
+      <p>Company director at 20 is not a small thing. It shows on your LinkedIn, your CV, and your record at Companies House. Regardless of how Lebrato goes, you'll have formally run a UK business.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌍</div>
+      <h3>Support for Naadhish's UK Visa</h3>
+      <p>Your UK presence and director role directly supports the Innovator Founder visa application. When Naadhish arrives in the UK, you'll have been building the business here for months, that's exactly the story the Home Office wants to see.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏆</div>
+      <h3>The Chance To Say You Were First</h3>
+      <p>When Lebrato succeeds, you were there from the beginning. In the UK startup world, being employee number zero or co-founder number one matters enormously.</p>
+    </div>
+  </div>
+
+  <div class="honest-box" style="margin-top:2.5rem;">
+    <h4>The salary question, being honest</h4>
+    <p>There's no salary for the first 6 - 8 months while we raise our pre-seed funding. Your expenses for Lebrato activities (travel to meetings, event tickets, materials) will be reimbursed.<br>When we raise the pre-seed round, a monthly stipend begins: target £600 - 800/month while you continue your current job, transitioning to a full market salary when you go full-time. We won't ask you to quit your job before there's money in the company to pay you.</p>
+  </div>
+</div>
+</div>
+
+<!-- NEXT STEPS / CTA -->
+<div class="cta-section">
+  <h2>Interested? Here's what happens <em>next</em></h2>
+  <p>No pressure, no hard sell.<br>Read this, sleep on it, and let's have a proper conversation.</p>
+
+  <div class="cta-steps">
+    <div class="cta-step">
+      <div class="cta-step-num">1</div>
+      <h4>Have a Video Call</h4>
+      <p>A 45-minute call with Naadhish, questions, honest conversation, get to know each other.</p>
+    </div>
+    <div class="cta-step">
+      <div class="cta-step-num">2</div>
+      <h4>Review The Agreement</h4>
+      <p>We share the full co-founder agreement. You read it, ask questions, get independent advice if you want it.</p>
+    </div>
+    <div class="cta-step">
+      <div class="cta-step-num">3</div>
+      <h4>Sign & Start</h4>
+      <p>Agreement signed, shares allocated, director appointment filed, and we get to work.</p>
+    </div>
+  </div>
+
+  <div class="cta-contact">
+    <p>To arrange a conversation or ask any questions:</p>
+    <strong>contact@lebrato.co.uk</strong>
+    <p style="margin-top:0.5rem;">Or reach out directly on <br><a href="https://wa.me/447951839885" class="whatsapp-btn" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp</a><br>
+          <a href="https://www.linkedin.com/in/naadhish-yahya" class="linkedin-btn" target="_blank">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#0072B1" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          Connect on LinkedIn
+        </a></p>
+  </div>
+
+  <p style="margin-top:3rem;font-size:0.7rem;color:rgba(250,247,242,0.2);letter-spacing:0.04em;">This document is confidential and prepared exclusively for the recipient. It is not an offer of employment or a contract. Any formal agreement will be governed by a separate co-founder agreement.<br>Lebrato Limited, Company No. 15919460, registered in England and Wales.</p>
+</div>
+
+</body>
+</html>
