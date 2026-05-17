@@ -100,6 +100,7 @@
     text-transform: uppercase;
     margin-bottom: 2rem;
     animation: fadeUp 0.8s ease both;
+    text-align: center;
   }
   .hero-label-dot {
     width: 6px; height: 6px;
@@ -415,9 +416,13 @@
   /* FOOTER */
   footer {
     padding: 3rem 4rem;
-    display: flex; align-items: center; justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     border-top: 1px solid var(--border);
-    flex-wrap: wrap; gap: 1rem;
+    gap: 1.25rem;
   }
   .footer-logo {
     font-family: 'Playfair Display', serif;
@@ -500,7 +505,7 @@
     .stats-section { grid-template-columns: 1fr; }
     .stat-item { border-right: none; border-bottom: 1px solid var(--border); }
     .cta-section { margin: 0 1.5rem 2rem; padding: 3.5rem 1.5rem; }
-    footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+    footer { padding: 2rem 1.5rem; align-items: center; gap: 1.25rem; }
     .footer-logo img { height: 26px; }
   }
 
@@ -561,7 +566,7 @@
     .cta-btn { border-radius: 12px; padding: 0.875rem; }
 
     /* Footer */
-    footer { padding: 1.75rem 1.25rem; }
+    footer { padding: 1.75rem 1.25rem; align-items: center; text-align: center; }
     .footer-logo img { height: 22px; }
     .footer-links { gap: 1.25rem; flex-wrap: wrap; }
   }
@@ -578,7 +583,7 @@
     <a href="#how">How it works</a>
     <a href="#occasions">Occasions</a>
     <a href="#about">About</a>
-    <a href="#" class="nav-cta">Join early access</a>
+    <a href="#" class="nav-cta">Join Early Access</a>
   </div>
   <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMenu()" aria-label="Toggle navigation" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -604,7 +609,7 @@
       <input class="search-input" id="hero-search" type="text"
         placeholder="e.g. Birthday dinner, 14 people, £60 per head, Shoreditch, Saturday…">
       <button class="search-btn" onclick="doSearch()">
-        Abracadabra : Find My Spot
+        Abracadabra : Find my spot
       </button>
     </div>
     <div class="search-prompts">
@@ -764,8 +769,8 @@
   <div class="footer-links">
     <a href="#">Privacy</a>
     <a href="#">Terms</a>
-    <a href="#">Contact</a>
     <a href="#">For Venues</a>
+    <a href="mailto:contact@lebrato.co.uk">contact@lebrato.co.uk</a>
   </div>
   <p class="footer-copy">© 2024 Lebrato Limited · London</p>
 </footer>
@@ -821,7 +826,7 @@ async function joinWaitlist() {
   btn.disabled = true;
 
   try {
-    const res = await fetch('https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID', {
+    const res = await fetch('https://formspree.io/f/xeedqqbv', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({ email: email })
